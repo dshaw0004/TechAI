@@ -172,24 +172,6 @@ h3 {
   margin-bottom: 20px;
 }
 
-.form-group-inline {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 15px;
-}
-.form-group-inline label {
-  margin-bottom: 0;
-  flex-basis: 30%; /* Give label some space */
-  flex-shrink: 0;
-}
-.form-group-inline select,
-.form-group-inline input {
-  flex-grow: 1;
-  margin-top: 0;
-}
-
 .input-with-icon {
   position: relative;
 }
@@ -294,25 +276,11 @@ input:checked + .slider:before {
   flex-direction: column;
   align-items: flex-start;
 }
-.profile-picture-area {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-top: 10px;
-}
 .profile-img {
   width: 100px; /* Adjust size as needed */
   height: 100px;
   border-radius: 8px;
   object-fit: cover;
-}
-.account-prefs-card .form-group-inline {
-  /* More spacing for prefs */
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
-}
-.account-prefs-card .form-group-inline:last-child {
-  border-bottom: none;
 }
 
 /* Change Password */
@@ -399,9 +367,6 @@ input:checked + .slider:before {
 .action-button:hover {
   color: #5e50f9;
 }
-.account-deletion-card .button-danger {
-  margin-top: 10px;
-}
 
 /* Responsive Design */
 @media (max-width: 992px) {
@@ -435,27 +400,12 @@ input:checked + .slider:before {
     transform: translateX(-100%);
     width: 260px; 
   }
-  .sidebar.open {
-    transform: translateX(0);
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
-  }
   .content-area {
     margin-left: 0; /* Full width content */
     padding: 20px 15px; /* Less padding */
   }
   .menu-toggle {
     display: block; /* Show hamburger */
-  }
- 
-  .form-group-inline {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-  }
-  .form-group-inline select,
-  .form-group-inline input {
-    width: 100%; /* Full width on small screens */
-    max-width: none;
   }
   .setting-item {
     flex-direction: column;
