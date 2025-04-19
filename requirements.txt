@@ -1,0 +1,28 @@
+# Environment Requirements
+
+This is a pure frontend project built with HTML, CSS, and JavaScript.
+It does not have server-side or Python dependencies.
+
+## Required Environment:
+
+*   **Web Browser:** A modern web browser with support for:
+    *   HTML5
+    *   CSS3 (including Flexbox, Grid, Custom Properties/Variables, Transitions, Animations)
+    *   JavaScript (ES6+)
+    *   (Optional but Recommended) `navigator.clipboard` API for copy functionality.
+
+## Recommended Browsers:
+
+*   Google Chrome (latest versions)
+*   Mozilla Firefox (latest versions)
+*   Safari (latest versions)
+*   Microsoft Edge (Chromium-based, latest versions)
+
+## Optional Development Tools:
+
+*   Node.js (for using tools like `live-server` for development)
+
+## External Assets (require internet connection unless hosted locally):
+
+*   Font Awesome (Icons) - Loaded via CDN
+*   Google Fonts (Inter) - Loaded via CSS `@import`
