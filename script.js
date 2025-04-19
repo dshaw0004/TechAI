@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll(".sidebar-nav .nav-link");
   const contentSections = document.querySelectorAll(".content-section");
-  const breadcrumbPage = document.getElementById("breadcrumb-page");
   const menuToggle = document.getElementById("menu-toggle");
   const sidebar = document.querySelector(".sidebar");
   const appContainer = document.querySelector(".app-container");
@@ -27,8 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     activeLink.classList.add("active");
 
-    // Update breadcrumbs
-    breadcrumbPage.textContent = activeLink.textContent.trim();
   }
 
   // Add click event listeners to nav links
@@ -54,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     appContainer.classList.toggle("sidebar-open");
   });
 
-  // Optional: Close sidebar if clicking outside of it on mobile
+  // close the menu if clicked outside of it in mobile device
   document.addEventListener("click", (event) => {
     if (window.innerWidth <= 768 && sidebar.classList.contains("open")) {
       // Check if the click is outside the sidebar and not on the toggle button
@@ -68,42 +65,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // --- Optional: Add simple interaction hints ---
 
-  // Copy Webhook URL
+  // to copy the webhook URL
   const copyButton = document.querySelector(".copy-button");
   const webhookUrlInput = document.getElementById("webhookUrl");
 
   if (copyButton && webhookUrlInput) {
     copyButton.addEventListener("click", () => {
-      webhookUrlInput.select(); // Select the text
-      webhookUrlInput.setSelectionRange(0, 99999); // For mobile devices
+      webhookUrlInput.select(); 
+      webhookUrlInput.setSelectionRange(0, 99999);
 
       try {
         navigator.clipboard
           .writeText(webhookUrlInput.value)
           .then(() => {
-            // Optional: Provide feedback (e.g., change icon, show tooltip)
+            // after coping change the icon to checked icon
             const originalIcon = copyButton.innerHTML;
-            copyButton.innerHTML = '<i class="fas fa-check"></i>'; // Change to checkmark
+            copyButton.innerHTML = '<i class="fas fa-check"></i>';
             setTimeout(() => {
-              copyButton.innerHTML = originalIcon; // Revert after 1.5s
+              // change back the icon
+              copyButton.innerHTML = originalIcon;
             }, 1500);
           })
           .catch((err) => {
-            console.error("Failed to copy text: ", err);
-            // Fallback using document.execCommand (deprecated but might work)
-            try {
-              document.execCommand("copy");
-              const originalIcon = copyButton.innerHTML;
-              copyButton.innerHTML = '<i class="fas fa-check"></i>';
-              setTimeout(() => {
-                copyButton.innerHTML = originalIcon;
-              }, 1500);
-            } catch (execErr) {
-              console.error("Fallback copy failed:", execErr);
-              alert("Could not copy text. Please copy manually.");
-            }
+            alert("Could not copy text. Please copy manually.");
           });
       } catch (err) {
         console.error("Clipboard API not available:", err);
@@ -112,19 +97,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- Initial state ---
-  // Ensure the default active link corresponds to the default active section
   const defaultActiveLink = document.querySelector(
     ".sidebar-nav .nav-link.active"
-  );
+  ); // currently active nav link
   if (defaultActiveLink) {
+    /*
+     get id of currently active section and show it.
+     */
     const defaultTargetId = defaultActiveLink.getAttribute("data-target");
-    showSection(defaultTargetId); // Show the initial section
-    breadcrumbPage.textContent = defaultActiveLink.textContent.trim(); // Set initial breadcrumb
+    showSection(defaultTargetId);
   } else {
     // Fallback if no link is marked active initially
     navLinks[0].classList.add("active");
     showSection(navLinks[0].getAttribute("data-target"));
-    breadcrumbPage.textContent = navLinks[0].textContent.trim();
   }
 });

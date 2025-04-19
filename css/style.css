@@ -1,4 +1,3 @@
-/* Basic Reset & Defaults */
 * {
   margin: 0;
   padding: 0;
@@ -7,10 +6,9 @@
 
 body {
   font-family: sans-serif;
-  background-color: #f8f9fa; /* Light background for the page */
+  background-color: #f8f9fa; 
   color: #333;
   line-height: 1.6;
-  font-size: 14px; /* Base font size */
 }
 
 a {
@@ -47,7 +45,7 @@ input:focus,
 select:focus,
 textarea:focus {
   outline: none;
-  border-color: #8a7eff; /* Highlight color */
+  border-color: #8a7eff; 
   box-shadow: 0 0 0 2px rgba(138, 126, 255, 0.2);
 }
 
@@ -77,12 +75,6 @@ h3 {
   min-height: 100vh;
 }
 
-/* Sidebar */
-
-
-
-
-
 
 .admin-info {
   display: flex;
@@ -101,11 +93,10 @@ h3 {
 }
 
 .menu-toggle {
-  display: none; /* Hidden by default */
+  display: none; 
   position: absolute;
   top: .5rem;
-  right: -45px; /* Position outside the sidebar */
-  /* background-color: ; */
+  right: -45px; 
   color: #212529;
   border: none;
   padding: 10px 12px;
@@ -115,24 +106,12 @@ h3 {
   z-index: 1001;
 }
 
-/* Content Area */
-
-
-
-
-
-
-
-
-
-
-/* Settings Cards */
-
+/* settings */
 
 .settings-card h3 {
   font-size: 18px;
   font-weight: 600;
-  margin-bottom: 15px; /* Default bottom margin for H3 */
+  margin-bottom: 15px; 
   color: #333;
 }
 
@@ -140,18 +119,18 @@ h3 {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 8px; /* Reduced margin when description follows */
+  margin-bottom: 8px;
 }
 
 .card-header h3 {
-  margin-bottom: 0; /* Remove bottom margin when in header */
+  margin-bottom: 0;
   font-size: 18px;
 }
 
 .card-icon {
   font-size: 18px;
-  color: #8a7eff; /* Light purple icon color */
-  background-color: #f0efff; /* Very light purple background */
+  color: #8a7eff;
+  background-color: #f0efff;
   padding: 8px;
   border-radius: 50%;
   width: 36px;
@@ -177,7 +156,7 @@ h3 {
 }
 
 .input-with-icon input {
-  padding-right: 40px; /* Space for the icon */
+  padding-right: 40px;
 }
 
 .input-icon-right,
@@ -186,7 +165,7 @@ h3 {
   top: 50%;
   right: 12px;
   transform: translateY(-50%);
-  color: #adb5bd; /* Icon color */
+  color: #adb5bd;
   cursor: pointer;
   background: none;
   border: none;
@@ -212,12 +191,12 @@ textarea {
   gap: 15px;
 }
 
-/* Toggle Switch */
+/* Switch toggle */
 .switch {
   position: relative;
   display: inline-block;
-  width: 40px; /* Smaller width */
-  height: 22px; /* Smaller height */
+  width: 40px;
+  height: 22px;
 }
 
 .switch input {
@@ -240,16 +219,16 @@ textarea {
 .slider:before {
   position: absolute;
   content: "";
-  height: 16px; /* Smaller circle */
-  width: 16px; /* Smaller circle */
-  left: 3px; /* Adjust position */
-  bottom: 3px; /* Adjust position */
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
   background-color: white;
   transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #5e50f9; /* Purple when checked */
+  background-color: #5e50f9;
 }
 
 input:focus + .slider {
@@ -257,7 +236,7 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(18px); /* Adjust movement */
+  transform: translateX(18px);
 }
 
 .slider.round {
@@ -268,192 +247,4 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-/* Specific Page Styles */
 
-/* Profile Settings */
-.profile-picture-card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.profile-img {
-  width: 100px; /* Adjust size as needed */
-  height: 100px;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-/* Change Password */
-.password-reqs-card ul {
-  list-style: none;
-  padding-left: 5px;
-}
-.password-reqs-card li {
-  margin-bottom: 8px;
-  color: #6c757d;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.password-reqs-card li i {
-  color: #28a745; /* Green checkmark */
-  font-size: 14px;
-}
-
-/* Settings with Items (like toggles, selects) */
-.setting-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 0;
-}
-.setting-item:last-child {
-  border-bottom: none;
-}
-
-.setting-icon {
-  color: #8a7eff; /* Light purple icon color */
-  font-size: 16px;
-  width: 20px; /* Align icons */
-  text-align: center;
-}
-.setting-item select {
-  max-width: 180px; /* Limit width of selects */
-  margin-top: 0; /* Remove default margin */
-}
-.setting-item .action-button {
-  /* For cog icon button */
-  color: #6c757d;
-  font-size: 18px;
-}
-.setting-item .action-button:hover {
-  color: #5e50f9;
-}
-
-/* Data & Privacy */
-.action-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 0;
-}
-.action-item:last-child {
-  border-bottom: none;
-}
-.action-text {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-.action-icon {
-  color: #8a7eff;
-  font-size: 16px;
-  width: 20px;
-  text-align: center;
-}
-.action-text label {
-  font-weight: 500;
-  color: #333;
-  margin-bottom: 2px;
-}
-.action-text span {
-  font-size: 13px;
-  color: #6c757d;
-}
-.action-button {
-  color: #6c757d;
-  font-size: 16px;
-}
-.action-button:hover {
-  color: #5e50f9;
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-  .content-area {
-    padding: 25px 30px;
-  }
-  .section-title {
-    font-size: 24px;
-  }
-  .settings-card {
-    padding: 20px 25px;
-    max-width: 650px;
-  }
-}
-
-@media (max-width: 768px) {
-  .app-container {
-    grid-template-columns: 100%; /* Full width on small screens */
-    grid-template-rows: auto 1fr; /* Sidebar on top */
-  }
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh; /* Full height */
-    z-index: 1000;
-    transition: transform 0.3s ease-in-out;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-  }
-  .sidebar {
-    transform: translateX(-100%);
-    width: 260px; 
-  }
-  .content-area {
-    margin-left: 0; /* Full width content */
-    padding: 20px 15px; /* Less padding */
-  }
-  .menu-toggle {
-    display: block; /* Show hamburger */
-  }
-  .setting-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-  .setting-item .switch,
-  .setting-item select,
-  .setting-item .action-button {
-    margin-left: auto; /* Push controls to the right */
-    margin-top: 5px;
-  }
-  .action-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-  .action-item .action-button {
-    align-self: flex-end;
-  }
-}
-
-
-.button-filled {
-  background-color: #5512ef;
-  color: white;
-
-  border-radius: 1rem;
-  padding: 0.5em 1em;
-  font-size: 1rem;
-  font-weight: 600;
-}
-.button-flat {
-  background-color: #e9ecef;
-  color: #5512ef;
-
-  border-radius: 1rem;
-  padding: 0.5em 1em;
-  font-size: 1rem;
-  font-weight: 600;
-}
-select {
-  border: none;
-  font-weight: 600;
-}
-
-.settings-card {
-  border-radius: 12px;
-  padding: 25px 30px;
-  margin-bottom: 25px;
-}
