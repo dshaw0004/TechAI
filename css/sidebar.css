@@ -10,7 +10,7 @@
 }
 
 .sidebar-top {
-  padding: 0 25px;
+  padding: 0 25px; /* Horizontal padding for top section */
 }
 
 .sidebar h1 {
